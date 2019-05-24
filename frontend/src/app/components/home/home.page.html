@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-title style="font-size:30px; font-weight: bold">Stations</ion-title>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item>
+        <ion-label style="font-size:23px; font-weight: bold">Station</ion-label>
+        <ion-label style="font-size:23px; font-weight: bold">State</ion-label>
+        <ion-label style="font-size:23px; font-weight: bold">Description</ion-label>
+        <ion-label style="font-size:23px; font-weight: bold">View</ion-label>
+    </ion-item>
+  </ion-list >
+  <ion-list >
+    <ion-item>
+      <ion-label>Sta1</ion-label>
+      <ion-label>State1</ion-label>
+      <ion-label>desc1</ion-label>
+      <ion-label>
+        <a (click)="viewStation(station)">
+          <i class="material-icons">pageview</i>
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!-- 
+  <ion-content>
+  <div class="container">
+    <div class="row">
+      <div class="col s7">
+        <ion-list-header>
+          <ion-label>Station</ion-label>
+          <ion-label>State</ion-label>
+          <ion-label>Description</ion-label>
+          <ion-label>View</ion-label>
+        <ion-list-header>
+        <ion-list *ngFor="let station of serviceService.station">
+          <ion-item>
+            <ion-label>{{station.name}}</ion-label>
+            <ion-label>{{station.state}}</ion-label>
+            <ion-label>{{station.description}}</ion-label>
+            <ion-label>
+              <a (click)="viewStation(station)">
+                <i class="material-icons">pageview</i>
+              </a>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>
+-->
