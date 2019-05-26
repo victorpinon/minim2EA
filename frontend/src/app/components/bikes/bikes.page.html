@@ -1,9 +1,56 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>bikes</ion-title>
-  </ion-toolbar>
+    <ion-title>Bikes</ion-title>
 </ion-header>
 
 <ion-content>
-
+  <ion-text>
+      <h3>Station: {{this.serviceService.selectedStation.name}}</h3>
+  </ion-text>
+  <ion-list>
+    <ion-item>
+      <ion-label class="table-header">Bike</ion-label>
+      <ion-label class="table-header">Kms</ion-label>
+      <ion-label class="table-header">Description</ion-label>
+      <ion-label class="table-header">Delete</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngFor="let bike of serviceService.stationBike">
+    <ion-item>
+      <ion-label>{{bike.name}}</ion-label>
+      <ion-label>{{bike.kms}}</ion-label>
+      <ion-label>{{bike.description}}</ion-label>
+      <ion-label>
+        <a (click)="deleteBike(bike)">
+          <i class="material-icons">delete</i>
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <br>
+  <br>
+  <br>
+  <ion-text>
+      <h3>Unassigned Bikes</h3>
+  </ion-text>
+  <ion-list>
+    <ion-item>
+      <ion-label class="table-header">Bike</ion-label>
+      <ion-label class="table-header">Kms</ion-label>
+      <ion-label class="table-header">Description</ion-label>
+      <ion-label class="table-header">Delete</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngFor="let bike of serviceService.unassignedBike">
+    <ion-item>
+      <ion-label>{{bike.name}}</ion-label>
+      <ion-label>{{bike.kms}}</ion-label>
+      <ion-label>{{bike.description}}</ion-label>
+      <ion-label>
+        <a (click)="addBike(bike)">
+          <i class="material-icons">add_circle_outline</i>
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
