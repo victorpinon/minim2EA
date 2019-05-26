@@ -9,6 +9,7 @@ import { ServiceService } from 'src/app/services/service.service';
   styleUrls: ['./stations.page.scss'],
   providers: [ServiceService]
 })
+
 export class StationsPage implements OnInit {
 
   constructor(private serviceService: ServiceService, private router: Router) { }
@@ -33,7 +34,17 @@ export class StationsPage implements OnInit {
   }
 
   filterInput(input){
-    console.log(input);
+    if (input){
+      this.filteredStations = this.filteredStations.filter(station => {
+        return station.name == input;
+      })
+    } else {
+      this.getStations();
+    }
+  }
+
+  refresh(){
+    this.getStations();
   }
 
   orderStationsAlphabetically(){

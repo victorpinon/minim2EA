@@ -3,10 +3,11 @@
 </ion-header>
   
 <ion-content>
+  <br>
   <ion-input (change)="filterInput(input)" [(ngModel)]="input" placeholder="Search station">
-      <a (click)="clear()">
-          <i class="material-icons">clear</i>
-        </a>
+      <a style="margin-right:3px;" (click)="refresh()">
+        <i class="material-icons">refresh</i>
+      </a>
   </ion-input>
   
   <ion-list>

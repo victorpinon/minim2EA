@@ -28,6 +28,10 @@ export class BikesPage implements OnInit {
     this.getUnassignedBikes();
   }
 
+  return(){
+    this.router.navigate([""]);
+  }
+
   getStation() {
     this.serviceService.getStation(this.serviceService.selectedStation._id)
       .subscribe(res =>{

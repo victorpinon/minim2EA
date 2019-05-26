@@ -1,8 +1,14 @@
 <ion-header>
+  <ion-buttons  slot="primary">
     <ion-title>Bikes</ion-title>
+    <ion-button (click)="return()">
+        <i class="material-icons">keyboard_arrow_left</i>
+    </ion-button>
+  </ion-buttons>
 </ion-header>
 
 <ion-content>
+  <br>
   <ion-text>
       <h3>Station: {{this.serviceService.selectedStation.name}}</h3>
   </ion-text>
